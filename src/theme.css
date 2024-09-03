@@ -1,0 +1,145 @@
+.Buttons-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.Buttons-container .Label-container {
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.Year-dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  padding: 5px 20px;
+}
+
+.Prev-button,
+.Next-button {
+  background: transparent;
+  border: none;
+  padding: 10px;
+}
+
+.Week {
+  margin: 10px 0;
+}
+
+.Week.highlight {
+  border-radius: 5px;
+}
+
+.Weeks-wrapper.Header {
+  border-bottom: 1px solid #eee;
+}
+
+.Week .Day.Header {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 120%;
+}
+
+.Day span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.Day.today span {
+  position: relative;
+  display: inline-block;
+  font-size: 110%;
+}
+
+/* weekend */
+.Week:not(.start-on-monday) .Day:first-child,
+.Week:not(.start-on-monday) .Day:last-child {
+  color: orange;
+}
+
+/* sunday */
+.Week:not(.start-on-monday) .Day:first-child {
+  color: red;
+}
+
+/* start on monday - weekend */
+.Week.start-on-monday .Day:nth-child(6),
+.Week.start-on-monday .Day:last-child {
+  color: orange;
+}
+
+/* start on monday - sunday */
+.Week.start-on-monday .Day:last-child {
+  color: red;
+}
+
+.Day.today span::after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 2px solid orange;
+  width: 10px;
+  height: 1px;
+}
+
+.Day.Sunday span {
+  color: #ff8a80;
+}
+
+.Week .Day.Highlight span {
+  color: #2196f3;
+}
+
+.Week .Day.Selected span {
+  background: #1565c0;
+  color: white;
+}
+
+.Week .Day[disabled="disabled"] span {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.Months-wrapper .Month span {
+  display: inline-block;
+  padding: 10px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.Special-buttons {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.Today-button {
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  padding: 5px;
+}
