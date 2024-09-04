@@ -1,26 +1,32 @@
-import { Grid } from "@mui/material";
-import { DateCalendar, LocalizationProvider } from "@mui/x-date-pickers";
+
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import dayjs from "dayjs";
-import { useState } from "react";
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import dayjs from 'dayjs';
+import updateLocale from 'dayjs/plugin/updateLocale';
+import 'dayjs/locale/de';
+import { Grid } from '@mui/material';
 
-
+dayjs.extend(updateLocale);
+// Replace "en" with the name of the locale you want to update.
+dayjs.updateLocale('es', {
+  Domingo: 0, Lunes: 1., Martes: 2, Miercoles: 3, Jueves: 4, Viernes: 5, Sabado: 6,
+  weekStart: 1,
+});
 export const DatePike = () => {
-  const [value, setValue] = useState(dayjs('2024-09-03'));
 
   return (
-    
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <Grid container components={['DateCalendar']}>
-      <Grid item label="Controlled calendar">
-          <DateCalendar 
-          value={value} 
-          onChange={(newValue) => setValue(newValue)}
-          
-           />
+
+    <LocalizationProvider dateAdapter={AdapterDayjs}  adapterLocale="de">
+      <Grid container components={['DateCalendar']}>
+        <Grid item label="Uncontrolled calendar">
+          <DateCalendar defaultValue={dayjs('2024-09-04')}
+            views={['year', 'month', 'day']}
+          />
         </Grid>
-    </Grid>
+      </Grid>
     </LocalizationProvider>
+    
   );
 }
           

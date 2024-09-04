@@ -1,4 +1,4 @@
-import {   Box, Card,  Divider,  Grid,  Typography } from "@mui/material";
+import {  Card,  Divider,  Grid,  Typography } from "@mui/material";
 import {  CalendarToday } from "@mui/icons-material";
 import { ListServicios } from "../components/ListServices";
 import { MessagesConductor } from "../components/MessagesConductor";
@@ -6,10 +6,11 @@ import { DatePike } from "../components/DatePike";
 
 
 
+
   
 
 
-export const CardConductor = () => {
+export const CardConductor = ({children}) => {
 
     
 
@@ -34,7 +35,7 @@ export const CardConductor = () => {
     <Grid item size={{ xs: 6, sm:2, md: 3  }} 
       
     >
-        <DatePike/>
+      <DatePike/>
     </Grid>
     </Card>
     
