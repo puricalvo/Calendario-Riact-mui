@@ -24,20 +24,12 @@ export const CardConductor = ({children}) => {
      sx={{ display: 'flex',  }}
      > 
 
-    <Card  sx={{ 
-        flexBasis: '25em',   
-        padding: 2, 
-        border: 1, 
-        borderColor: 'black', 
-        justifyContent:'space-between', 
-        flexwrap: 'wrap',
-        }}>
-    <Grid item size={{ xs: 6, sm:2, md: 3  }} 
-      
+    
+    <Grid item size={{ xs: 6, sm:2, md: 3  }}    
+      sx={{ borderRadius: 2}}
     >
       <DatePike/>
     </Grid>
-    </Card>
     
     <Divider/>
     <Card  sx={{ flexBasis: '70em',  padding: 2, border: 1, borderColor: 'red', justifyContent:'space-between',flexwrap: 'wrap'}}>

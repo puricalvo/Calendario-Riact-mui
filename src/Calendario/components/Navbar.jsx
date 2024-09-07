@@ -18,10 +18,10 @@ export const Navbar = () => {
           direction='row' 
           justifyContent='space-around' 
           alignItems='center'
-          padding='3'
+          padding='2'
           sx={{
             display:'flex',
-            flexwrap: 'wrap'
+            flexwrap: 'wrap',
           }} 
         >
           

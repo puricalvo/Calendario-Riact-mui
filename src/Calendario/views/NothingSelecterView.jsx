@@ -1,5 +1,5 @@
 
-import { Divider, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 
 export const NothingSelecterView = () => {
@@ -7,28 +7,28 @@ export const NothingSelecterView = () => {
     
     <Grid
         container
-        spacing={ 0 }
-        direction="column"
+        direction="row"
         alignItems="center"
         justifyContent="center"
-        sx={{ 
-          minHeight: 'calc(100vh - 110px)', 
+        sx={{
+          minHeight: '70vh',
+          display: 'flex',
+          flexWrap: "wrap",
           backgroundColor: 'primary.main', 
-          padding: 0,
+          padding: 2,
           marginTop: 0,
-          borderRadius: 3 
+          borderRadius: 3 ,
         }}
     >
-      <Grid item size={{ xs: 12 }}>
-          <AirportShuttleIcon sx={{fontSize: 100, color: "white"}} />
+      
+      <Grid item size={{ xs: 1, sm: 2, md: 12 }} sx={{   textAlign: "center",  }}>
+          <AirportShuttleIcon sx={{fontSize: 80, color: "white" }} />
+          <Typography color='white' variant="h4">Bienvenido...</Typography>
+      
       </Grid>
-        <Divider/>
-      <Grid item size={{ xs: 12 }}>
-          <Typography color='white' variant="h3">Bienvenido...</Typography>
-      </Grid>
-  
       
     </Grid>
+      
   )
 }
 
