@@ -7,7 +7,8 @@ import { Navbar, Sidebar } from "../components";
 export const CalendarLayout = ({children}) => {
   return (
    
-        <Grid container 
+        <Grid container
+          className="animate__animated animate__fadeIn animate__faster" 
           direction='row'  
           padding='1' 
           justifyContent='space-around' 
@@ -19,7 +20,6 @@ export const CalendarLayout = ({children}) => {
 
                       <Divider/>
                       
-                      <Sidebar />
 
                       
               

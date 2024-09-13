@@ -7,11 +7,12 @@ export const NothingSelecterView = () => {
     
     <Grid
         container
+        className="animate__animated animate__fadeIn animate__faster" 
         direction="row"
         alignItems="center"
         justifyContent="center"
         sx={{
-          minHeight: '70vh',
+          minHeight: '75vh',
           display: 'flex',
           flexWrap: "wrap",
           backgroundColor: 'primary.main', 
