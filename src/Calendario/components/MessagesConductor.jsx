@@ -1,6 +1,8 @@
-import { Badge,  Checkbox,  Divider, Grid, Icon, IconButton, Toolbar, Typography } from "@mui/material";
-import CommentRoundedIcon from '@mui/icons-material/CommentRounded';
+import { Badge, Grid, Icon, IconButton, List, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { MensajesItem } from "./MensajesItem";
 
+import CommentRoundedIcon from '@mui/icons-material/CommentRounded';
 import MailIcon from '@mui/icons-material/Mail';
 
 
@@ -14,9 +16,14 @@ function notificationsLabel(count) {
     return `${count} notifications`;
   }
   
+  
+  
+  export const MessagesConductor = () => {
 
+  const { notes } = useSelector( state => state.calendario )
+    
+  console.log(notes);
 
-export const MessagesConductor = () => {
   return (
     <Grid container justifyContent="space-between">
         <Grid item >
@@ -37,12 +44,19 @@ export const MessagesConductor = () => {
             display:'flex',
             flexwrap: 'wrap'
           }} >
-            <Grid item size={{ xs:12, md: 8, p: 2 }}>
-                <Typography variant="body1" component="p">
-                    <Checkbox />
-                    Hola, tienes que recoger a Maria a las 12:30.
-                </Typography>
-            </Grid>
+
+          <List>
+            {
+               notes.map( note => {
+
+                 <MensajesItem key={ note.id }  { ...note }/>
+               })
+            }
+           
+          </List>
+            
+                  
+            
             <Grid item size={{ md: 4, p: 4 }}>
                 <IconButton aria-label={notificationsLabel(100)}>
                     <Badge badgeContent={100} color="error">
