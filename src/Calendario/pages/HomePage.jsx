@@ -1,51 +1,57 @@
-import { useDispatch, useSelector } from "react-redux";
-import { IconButton } from "@mui/material";
-import { AddOutlined } from "@mui/icons-material";
-
-
-
-import { CalendarLayout } from "../layout/CalendarLayout";
+import {  useSelector } from "react-redux";
 import { CardConductor, NothingSelecterView } from "../views";
-import { startNewNote } from "../../store/calendario/thunks";
+import { Navbar, Sidebar } from "../components";
+import { Divider, Grid, Toolbar } from "@mui/material";
 
 
-export const HomePage = () => {
+export const HomePage = ({ children }) => {
 
-  const dispatch = useDispatch();
-  const { isSaving, active } = useSelector( state => state.calendario);
-
-  const onClickNewNote = () => {
-    dispatch( startNewNote() );
-    
-  }
+ 
 
   return (
+    <>
     
-    <CalendarLayout>
+    
+    
+    <Grid container
+          className="animate__animated animate__fadeIn animate__faster" 
+          direction='row'  
+          padding='1' 
+          justifyContent='center' 
+          alignItems='center'
+          sx={{ display: 'flex', flexwrap: 'wrap', width: "100%" }}
+        >
+        
 
-      {
-        (!!active)
-         ? <CardConductor/>
-         : <NothingSelecterView/>
-      }
+                      <Navbar />
+                      <Divider/>
+        </Grid>
+               
+                      
+
+        <Grid container
+          className="animate__animated animate__fadeIn animate__faster" 
+          direction='row'  
+          padding='1' 
+          justifyContent='center' 
+          alignItems='center'
+          sx={{ display: 'flex', flexwrap: 'wrap', width: "100%",  }}
+        >  
+
+                      <Sidebar />
+                      <Divider/>
+        
+        </Grid>
+
       
-      <IconButton
-        onClick={ onClickNewNote }
-        size="large"
-        disabled={ isSaving }
-        sx={{
-          color: 'white',
-          backgroundColor: 'dimgray',
-          ":hover": {backgroundColor: 'error.main', },
-          position: 'fixed',
-          right: 50,
-          bottom: 50, 
-        }}
-      >
-        <AddOutlined sx={{ fontSize: 30}}/>
-      </IconButton>
+     
+                
+          <Toolbar/>
+           
+            
+            { children }
+           
       
-   
-    </CalendarLayout>
+      </> 
   )
 }

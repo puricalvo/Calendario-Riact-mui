@@ -7,6 +7,9 @@ import { useForm } from "../../hooks/useForm";
 
 import { startCreatingUserWithEmailPassword } from "../../store/auth";
 
+
+
+
 const formData = {
   email: '',
   password: '',

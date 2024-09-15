@@ -1,9 +1,9 @@
-import {  Card,  Divider,  Grid,  Typography } from "@mui/material";
+import {  Card,  Divider,  Grid,    Typography } from "@mui/material";
 import {  CalendarToday } from "@mui/icons-material";
 import { ListServicios } from "../components/ListServices";
 import { MessagesConductor } from "../components/MessagesConductor";
 import { DatePike } from "../components/DatePike";
-import { Sidebar } from "../components";
+
 
 
 
@@ -13,8 +13,7 @@ import { Sidebar } from "../components";
 
 export const CardConductor = ({children}) => {
 
-    
-
+  
 
   return (
      <Grid container 
@@ -30,7 +29,7 @@ export const CardConductor = ({children}) => {
       justifyContent='space-around'
 
     >
-        <Sidebar />
+        
     </Grid>
     
     <Grid item size={{ xs: 6, sm:2, md: 3  }}    
@@ -54,8 +53,7 @@ export const CardConductor = ({children}) => {
            <Grid item size={{ xs: 6, sm: 2, md: 8 }} 
               sx={{ borderRadius: 2 }}
            >
-
-                            <ListServicios/>
+              <ListServicios/>
            </Grid>
         
         
@@ -70,19 +68,12 @@ export const CardConductor = ({children}) => {
       direction='row'
       justifyContent='center'  
     >
-                             <MessagesConductor/>
-
+        <MessagesConductor/>
     </Grid>
      
  </Grid>
         
-        
-    
-        
-   
-       
-  
-      
+     
 
   )    
 }
