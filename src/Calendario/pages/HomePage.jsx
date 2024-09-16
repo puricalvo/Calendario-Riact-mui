@@ -1,5 +1,3 @@
-import {  useSelector } from "react-redux";
-import { CardConductor, NothingSelecterView } from "../views";
 import { Navbar, Sidebar } from "../components";
 import { Divider, Grid, Toolbar } from "@mui/material";
 

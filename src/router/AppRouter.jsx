@@ -1,26 +1,24 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthRoutes } from "../auth/routes/AuthRoutes";
 
-import { HomeRoutes } from "../Calendario/routes/HomeRoutes";
-import { CheckingAuth } from "../ui";
-import { useCheckAuth } from "../hooks";
+
+// import { HomePage } from "../Calendario/pages/HomePage";
+import { CalendarPage } from "../Calendario/pages/CalendarPage";
 
 
 export const AppRouter = () => {
 
-  const status = useCheckAuth();
+  const authStatus = 'authenticated'; // not-authenticated // authenticated
   
-  if ( status === 'checking' ) {
-    return <CheckingAuth />
-  }
+  
 
   return (
     <Routes>
 
         {
-          (status === 'authenticated')
-          ? <Route path="/*" element={ <HomeRoutes /> } />
-          : <Route path="/auth/*" element={ <AuthRoutes /> } /> 
+          (authStatus === 'not-authenticated')
+          ? <Route path="/auth/*" element={ <AuthRoutes /> } /> 
+          : <Route path="/*" element={ <CalendarPage /> } />
         }
 
         <Route path="/*" element={ <Navigate to='/auth/login' />} />

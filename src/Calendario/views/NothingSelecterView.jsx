@@ -1,5 +1,5 @@
 
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import {  Grid, Typography } from "@mui/material";
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 
 export const NothingSelecterView = () => {
