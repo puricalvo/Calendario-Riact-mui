@@ -1,22 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
+
 import { Button, ButtonGroup, Divider, Grid, Typography } from "@mui/material"
-import { startNewNote } from "../../store/calendario";
-import { CardConductor, NothingSelecterView } from "../views";
+import { CardConductor } from "../views/CardConductor"
+import { NothingSelecterView } from "../views/NothingSelecterView"
 
 
 
 export const Sidebar = () => {
 
-  const dispatch = useDispatch();
-  const { isSaving, active } = useSelector( state => state.calendario);
-
-  const onClickNewNote = () => {
-    dispatch( startNewNote() );
-    
-  }
-
   
-
   
   return (
 
@@ -42,7 +33,7 @@ export const Sidebar = () => {
                 <Typography variant="h6" component='small' sx={{ p:0, display: { xs: "none", md: "inline-flex" } }}>29-08-24</Typography>
             <ButtonGroup variant="outlined" component='small'  size="large" aria-label="large button group" sx={{ p:1 }} >
             <Button  color="error" sx={{ fontSize: '0.75rem', mr: 0, ml: '-2px'}}>Marcar como leído</Button>
-            <Button   onClick={ onClickNewNote } disabled={ isSaving } color="error" sx={{ fontSize: '0.75rem', mr: 0, ml: '-2px'}}>Ver hoja conductor/a</Button>
+            <Button    color="error" sx={{ fontSize: '0.75rem', mr: 0, ml: '-2px'}}>Ver hoja conductor/a</Button>
             </ButtonGroup>
             </Grid>
             
@@ -64,11 +55,11 @@ export const Sidebar = () => {
             width: '80%'
           }}
         >
-            {
-                (!!active)
-                 ? <CardConductor/>
-                 : <NothingSelecterView/>
-            }
+           
+               
+                  <CardConductor/>
+                 <NothingSelecterView/>
+           
 
       </Grid>
         

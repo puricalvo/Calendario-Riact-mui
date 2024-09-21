@@ -36,7 +36,7 @@ export const Navbar = () => {
 
                 <Grid size={{ xs: 12, md: 4,  }} sx={{ flexGrow: 'auto', display: { xs: "none", md: "inline-flex" } }} >
                   <Typography variant='h2'  component='div' sx={{fontFamily:'serif', color:'GrayText' }}>Bienvenido: 
-                    <Typography variant='h4' component='span' sx={{ color:'black'}}></Typography>
+                    <Typography variant='h4' component='span' sx={{ color:'black'}}>Jose</Typography>
                   <Typography variant='h5'component='p' noWrap color='error'>al canal de comunicaciones Moventa</Typography>
                   </Typography>
                   <Divider/>

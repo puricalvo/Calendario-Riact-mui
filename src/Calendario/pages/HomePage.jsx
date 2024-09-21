@@ -1,5 +1,7 @@
-import { Navbar, Sidebar } from "../components";
+
 import { Divider, Grid, Toolbar } from "@mui/material";
+import { Navbar } from "../components/Navbar";
+import { Sidebar } from "../components/Sidebar";
 
 
 export const HomePage = ({ children }) => {
