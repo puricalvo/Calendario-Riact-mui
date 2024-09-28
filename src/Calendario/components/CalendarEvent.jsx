@@ -1,7 +1,7 @@
 
 
 
-export const CalendarEventBox = ({ event }) => {
+export const CalendarEvent = ({ event }) => {
 
     const { title, user } = event;
 

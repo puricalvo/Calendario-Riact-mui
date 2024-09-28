@@ -1,32 +1,10 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Button, ButtonGroup, Divider, Grid, Link, Typography } from "@mui/material"
-import { CardConductor } from "../views/CardConductor";
+import { Button, ButtonGroup, Grid, Link, Typography } from "@mui/material"
 
-
-
-export const Sidebar = () => {
-
-  
-  
+export const Sidebar2 = () => {
   return (
-
     <>
-
-    
-         <Grid container  
-          direction='row' 
-          justifyContent='space-around' 
-          alignItems='center'
-          padding='2'
-          sx={{
-            display:'flex',
-            flexwrap: 'wrap',
-            width: '100%'
-          }}
-            >
-            
-
-            <Grid size={{ xs: 12, md: 3 }}  sx={{ flexGrow: 'auto'}}>
+        <Grid item size={{ xs: 12, md: 3 }}  sx={{ flexGrow: 'auto'}}>
                 <Typography variant='h3' component='div' color='black' sx={{ p:1, display: { xs: "none", md: "inline-flex" } }}>Servicios y Mensajeria</Typography>
                 <Typography variante='p' fontSize={20} component='small' sx={{ p:0, display: { xs: "none", md: "inline-flex" } }}>para este dia:</Typography>
                 <Typography variant="h6" component='small' sx={{ p:0, display: { xs: "none", md: "inline-flex" } }}>29-08-24</Typography>
@@ -40,35 +18,8 @@ export const Sidebar = () => {
               </Link>
             </Button>
             </ButtonGroup>
-            </Grid>
+        </Grid>
             
-            
-         </Grid>
-
-         <Divider/>
-         <Divider/>
-
-        
-        <Grid container
-          direction='row' 
-          justifyContent='center' 
-          alignItems='center'
-          padding='2'
-          sx={{
-            display:'flex',
-            flexwrap: 'wrap',
-            width: '80%'
-          }}
-        >
-           
-               
-                  <CardConductor/>
-                 
-           
-
-      </Grid>
-        
-    
-  </>    
+    </>
   )
 }

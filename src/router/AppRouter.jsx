@@ -1,34 +1,54 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthRoutes } from "../auth/routes/AuthRoutes";
-
-
-// import { HomePage } from "../Calendario/pages/HomePage";
-import { CalendarPage } from "../Calendario/pages/CalendarPage";
-
+import { HomeRoutes } from "../Calendario/routes/HomeRoutes";
+import { useAuthStore } from "../hooks";
+import { useEffect } from "react";
 
 export const AppRouter = () => {
 
-  const authStatus = 'authenticated'; // not-authenticated // authenticated
-  
-  
+
+    const { status, checkAuthToken } = useAuthStore();
+  // const authStatus = 'not-authenticated' //'authenticated'  // 'not-authenticated';
+
+    useEffect(() => {
+      checkAuthToken(); 
+    }, [])
+    
+
+
+    if ( status === 'checking' ) {
+       return (
+          <h3>Cargando...</h3>
+       )
+    }
 
   return (
     <Routes>
 
         {
-          (authStatus === 'not-authenticated')
-          ? <Route path="/auth/*" element={ <AuthRoutes /> } /> 
-          : <Route path="/*" element={ <CalendarPage /> } />
+          ( status === 'not-authenticated' )
+              ?  (
+                  <>
+                    <Route path="/auth/*" element={ <AuthRoutes /> } />  // Login y Register
+                    <Route path="/*" element={ < Navigate to="/auth/login"/> } />
+                  </>
+              ) 
+              :  (
+                  <>
+                    <Route path="/*" element={ <HomeRoutes /> } /> // Pagina Principal
+                    <Route path="/*" element={ < Navigate to="/"/> } />
+                  </>
+              
+
+              )
+             
         }
 
-        <Route path="/*" element={ <Navigate to='/auth/login' />} />
+          
 
-        {/* Login y Registro */}
-        {/* <Route path="/auth/*" element={ <AuthRoutes /> } /> */}
 
-        {/* Calendario */}
-        {/* // <Route path="/*" element={ <HomeRoutes /> } /> */}
-        
+          
+ 
     </Routes>
   )
 }
